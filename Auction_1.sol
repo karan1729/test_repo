@@ -112,6 +112,22 @@ contract Auction {
         //** End code here. **
     }
 
+ 
+    struct Account {
+        uint remainingTokens; // tokens remaining with bidder
+        uint personId; // it serves as tokenId as well
+        address addr;//address of the bidder
+    }
+
+    mapping(address => Person) tokenDetails; //address to person
+    Person [4] bidders;//Array containing 4 person objects
+
+    Item [3] public items;//Array containing 3 item objects
+    address[3] public winners;//Array for address of winners
+    address public beneficiary;//owner of the smart contract
+
+    uint bidderCount=0;//counter
+
 
     function revealWinners() public onlyOwner{
 

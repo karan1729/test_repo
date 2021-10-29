@@ -112,6 +112,19 @@ contract Auction {
         //** End code here. **
     }
 
+struct Item {
+        uint itemId; // id of the item
+        uint[] itemTokens;  //tokens bid in favor of the item
+
+    }
+
+   //Structure to hold the details of a persons
+    struct Person {
+        uint remainingTokens; // tokens remaining with bidder
+        uint personId; // it serves as tokenId as well
+        address addr;//address of the bidder
+    }
+
 
     function revealWinners() public onlyOwner{
 

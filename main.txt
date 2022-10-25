@@ -1,0 +1,1012 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
+
+import './output.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> with AutomaticKeepAliveClientMixin {
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  int input_1;
+  int output_1;
+  int dis_1;
+
+  @override
+  bool get wantKeepAlive => true;
+
+  int input_2;
+  int output_2;
+  int dis_2;
+
+  int input_3;
+  int output_3;
+  int dis_3;
+
+  int input_4;
+  int output_4;
+  int dis_4;
+
+  int input_5;
+  int output_5;
+  int dis_5;
+
+  int input_6;
+  int output_6;
+  int dis_6;
+
+  int input_7;
+  int output_7;
+  int dis_7;
+
+  int input_8;
+  int output_8;
+  int dis_8;
+
+  int owip_1;
+  int owip_2;
+  int owip_3;
+
+  int target_1;
+  int target_2;
+  int target_3;
+  
+  int line_1;
+  int line_2;
+  int line_3;
+
+  void _submitForm() {
+    _formkey.currentState.save();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Builder(
+        builder: (context2) => Scaffold(
+            backgroundColor: Colors.grey,
+            appBar: AppBar(
+              title: Text('FLUTTER APP'),
+            ),
+            body: Form(
+                key: _formkey,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        color: Colors.blueGrey,
+                        child: Center(
+                          child: Text(
+                            "SHIFT A",
+                            style: TextStyle(
+                              fontSize: 70,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        color: Colors.pinkAccent,
+                        child: Center(
+                          child: Text(
+                            'ZONE:D',
+                            style: TextStyle(
+                                fontSize: 70, fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 125),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      'LINE NO :',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      line_1 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Line No 1',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                     onSaved: (String value) {
+                                      line_2 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Line no 2',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    line_3 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Line no 3',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 95),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      'OPENING WIP',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      owip_1 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Opening Wip 1',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      owip_2 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Opening Wip 2',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    owip_3 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Opening Wip 3',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 125),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      'TARGET',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      target_1 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Target 1',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      target_2 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Target 2',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    target_3 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Target 3',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 155),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '1',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      input_1 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Input',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      output_1 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Output',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    dis_1 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Dispatch',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              padding: EdgeInsets.only(left: 155),
+                              color: Colors.indigo,
+                              child: Row(
+                                children: <Widget>[
+                                  Text(
+                                    '2',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              child: TextFormField(
+                                onSaved: (String value) {
+                                  input_2 = int.parse(value);
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'Input',
+                                  border: new OutlineInputBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: TextFormField(
+                                onSaved: (String value) {
+                                  output_2 = int.parse(value);
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'Output',
+                                  border: new OutlineInputBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              child: TextFormField(
+                                onSaved: (String value) {
+                                  dis_2 = int.parse(value);
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'Dispatch',
+                                  border: new OutlineInputBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.all(4),
+                              padding: EdgeInsets.only(left: 155),
+                              color: Colors.indigo,
+                              child: Row(
+                                children: <Widget>[
+                                  Text(
+                                    '3',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              child: TextFormField(
+                                onSaved: (String value) {
+                                  input_3 = int.parse(value);
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'Input',
+                                  border: new OutlineInputBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              child: TextFormField(
+                                onSaved: (String value) {
+                                  output_3 = int.parse(value);
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'Output',
+                                  border: new OutlineInputBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(5),
+                              child: TextFormField(
+                                onSaved: (String value) {
+                                  dis_3 = int.parse(value);
+                                },
+                                decoration: InputDecoration(
+                                  labelText: 'Dispatch',
+                                  border: new OutlineInputBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 155),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '4',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      input_4 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Input',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      output_4 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Output',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    dis_4 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Dispatch',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 155),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '5',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      input_5 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Input',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      output_5 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Output',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    dis_5 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Dispatch',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 155),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '6',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      input_6 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Input',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      output_6 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Output',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    dis_6 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Dispatch',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 155),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '7',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      input_7 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Input',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      output_7 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Output',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    dis_7 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Dispatch',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(4),
+                                padding: EdgeInsets.only(left: 155),
+                                color: Colors.indigo,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '8',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      input_8 = int.parse(value);
+                                      print(input_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Input',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5),
+                                ),
+                              ),
+                              Container(
+                                  child: TextFormField(
+                                    onSaved: (String value) {
+                                      output_8 = int.parse(value);
+                                      print(output_1);
+                                    },
+                                    decoration: InputDecoration(
+                                      labelText: 'Output',
+                                      border: new OutlineInputBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  margin: EdgeInsets.all(5)),
+                              Container(
+                                margin: EdgeInsets.all(5),
+                                child: TextFormField(
+                                  onSaved: (String value) {
+                                    dis_8 = int.parse(value);
+                                    print(dis_1);
+                                  },
+                                  decoration: InputDecoration(
+                                    labelText: 'Dispatch',
+                                    border: new OutlineInputBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      RaisedButton(
+                        child: Text('SUBMIT'),
+                        onPressed: () {
+                          _submitForm();
+                          Navigator.push(context2, MaterialPageRoute(
+                              builder: (BuildContext context2) {
+                            return Ans(
+                              output_1 +
+                                  output_2 +
+                                  output_3 +
+                                  output_4 +
+                                  output_5 +
+                                  output_6 +
+                                  output_7 +
+                                  output_8,
+                              dis_1 +
+                                  dis_2 +
+                                  dis_3 +
+                                  dis_4 +
+                                  dis_5 +
+                                  dis_6 +
+                                  dis_7 +
+                                  dis_8,
+                              target_1,
+                              target_2,
+                              target_3,
+                            );
+                          }));
+                        },
+                      ),
+                    ],
+                  ),
+                ))),
+      ),
+    );
+  }
+}
